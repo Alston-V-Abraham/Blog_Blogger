@@ -1,0 +1,87 @@
+CTYPE html>
+<html>
+	<title>MasterBlogger</title>
+	<link rel="stylesheet" href="https://minimalist.coolcodersj.repl.co/style.css">
+	<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/atom-one-dark.min.css">
+				<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+				<script>hljs.initHighlightingOnLoad();</script>
+<style>
+			form {
+				padding: 20px;
+			}
+
+			.page {
+				background-color: #21252b;
+				margin-left: 200px;
+				margin-right: 200px;
+				height: 100%;
+				padding-right: 10px;
+				padding-left: 10px;
+				padding-top: 20px;
+				padding-bottom: 200px !important;
+				border: none;
+				border-radius: 6px;
+				overflow: hidden !important;
+			}
+			img {
+				width: 200px;
+			}
+
+			html {
+				background-color: #2c323a;
+			}
+
+			textarea {
+				height: 500px;
+			}
+		</style>
+	<div class="topnav text">
+		<a class="brand" href="/">Master_Blogger!</a>
+		<div class="topnavitem">
+		 <a class="topnavitem" href="#">Home</a>
+  <a class="topnavitem" href="/login">Login</a>
+  <a class="topnavitem" href="/signup">Signup</a> 
+  </div>
+</div> 
+<script src="  https://unpkg.com/showdown/dist/showdown.min.js"></script>
+<script>
+		function preview() {
+		var converter = new showdown.Converter();
+    text      = document.getElementById('blog').value;
+    html      = converter.makeHtml(text);
+	document.getElementById("body").innerHTML = html;
+	 text      = document.getElementById('title').value,
+    html      = converter.makeHtml(text);
+	document.getElementById("ptitle").innerHTML = html;
+	hljs.highlightAll();
+		}
+	</script>
+<form method="post" action="new">
+	<h1>What's on your mind...?</h1>
+	<p>We support Github style markdown and the extended syntax for markdown!</p><br><br>
+	<input class="input" name="title" id="title" onkeyup="preview()" placeholder="Blog entry title..."><br>
+	<textarea class="textarea" name="blog" id="blog" onkeyup="preview(); hljs.highlightAll();" placeholder="What's on your mind...?" style="width: 100%;"></textarea>
+	<br><br>
+	<input type="checkbox"  name="type" value="Public">
+	<label class="text">Make Public</label>
+	<input type="checkbox"  name="type" value="Unlisted">
+	<label class="text">Make Unlisted</label>
+	<input type="checkbox"  name="type" value="Draft">
+	<label class="text">Make Draft</label>
+	<br><br>
+	<button type="submit">Create entry</button>
+	<br>
+	<br>
+	
+
+	
+	<h1>Preview</h1>
+	<div class="page">
+		<h1 id="ptitle"></h1>
+		<br><br>
+		<div id="body"></div>
+	</div>
+</form>
+
+</html>
