@@ -7,6 +7,9 @@ But, bored of using Google Blogger, WattPad...? No problem, we got you covered!
 Here's the best blog-maker that enables you to create blogs on-the-go!
 Read More!
 
+## Redirect
+https://masterblogger.cf/
+Find the blogger here
 ## Features
 ### Full Markdown Support
 With full Github flavored Markdown support, easily add headers, paragraphs, images, links, codeblocks, tables, and much more!
