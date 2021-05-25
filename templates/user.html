@@ -1,0 +1,32 @@
+$def with (titles, user)
+
+<!DOCTYPE html>
+<html>
+	<title>Master_Blogger!</title>
+	<link rel="stylesheet" href="https://minimalist.coolcodersj.repl.co/style.css">
+<style>
+			form {
+				padding: 20px;
+			}
+		</style>
+	<div class="topnav text">
+		<a class="brand" href="/">Master_Blogger!</a>
+		<div class="topnavitem">
+		 <a class="topnavitem" href="#">Home</a>
+  <a class="topnavitem" href="/login">Login</a>
+  <a class="topnavitem" href="/signup">Signup</a> 
+  </div>
+</div> 
+
+<br>
+<h1>$user</h1>
+
+<hr>
+<ul>
+  $for blog in titles:
+		$ url = "https://MasterBlogger.coolcodersj.repl.co/"+user+"/"+titles[blog]
+		<a href="$url"><li>$blog</li></a>
+</ul> 
+<br>
+
+</html>
