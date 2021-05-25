@@ -1,0 +1,37 @@
+$def with (id)
+<!DOCTYPE html>
+<html>
+	<title>MasterBlogger</title>
+	<link rel="stylesheet" href="https://minimalist.coolcodersj.repl.co/style.css">
+	<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/atom-one-dark.min.css">
+				<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+				<script>hljs.initHighlightingOnLoad();</script>
+<style>
+			form {
+				padding: 20px;
+			}
+
+		</style>
+	<div class="topnav text">
+		<a class="brand" href="/">Master_Blogger!r</a>
+		<div class="topnavitem">
+		 <a class="topnavitem" href="#">Home</a>
+  <a class="topnavitem" href="/login">Login</a>
+  <a class="topnavitem" href="/signup">Signup</a> 
+  </div>
+</div> 
+
+<form method="post" action="vis">
+	<input type="hidden" value="$id" name="id">
+	<input type="checkbox"  name="type" value="Public">
+	<label class="text">Make Public</label>
+	<input type="checkbox"  name="type" value="Unlisted">
+	<label class="text">Make Unlisted</label>
+	<input type="checkbox"  name="type" value="Draft">
+	<label class="text">Make Draft</label>
+	<br><br>
+	<button type="submit">Change Visibility</button>
+</form>
+
+</html>
