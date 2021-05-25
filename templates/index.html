@@ -1,0 +1,62 @@
+$def with (user, titles, msg)
+
+<!DOCTYPE html>
+<html>
+	<title>MasterBlogger</title>
+	<link rel="stylesheet" href="https://minimalist.coolcodersj.repl.co/style.css">
+<style>
+			form {
+				padding: 20px;
+			}
+		</style>
+	<div class="topnav text">
+		<a class="brand" href="/">MasterBlogger</a>
+		<div class="topnavitem">
+		 <a class="topnavitem" href="#">Home</a>
+  <a class="topnavitem" href="/login">Login</a>
+  <a class="topnavitem" href="/signup">Signup</a> 
+  </div>
+</div> 
+$if msg != "":
+	<h4 class="alert">$:msg</h5>
+
+<br>
+<h1>$user</h1>
+<hr>
+<a href="https://auth.sjurl.tk">
+<button>Manage Account</button>
+</a>
+<br><br>
+<a href="/new">
+<button>New blog entry</button>
+</a>
+<hr>
+<table style="width:100%" class="text">
+  <tr>
+    <th>Blog Name</th>
+    <th>Blog URL</th>
+	<th>Actions</th>
+  </tr>
+  $for blog in titles:
+	<tr>
+		$ url = "https://MasterBlogger.cf/"+user+"/"+titles[blog]
+		<form method="post" action="edit">
+		<td>$blog</td>
+		<td><a href="$url">$url</a></td>
+		<form action="post" method="edit">
+		<td><button type="submit" style="width: 100%">Edit</button></td>
+		<input type="hidden" name="id" value="$titles[blog]">
+		</form>
+		<form method="post" action="delete" >
+		<td><button type="submit" style="width: 100%">Delete</button></td>
+		<input type="hidden" name="id" value="$titles[blog]">
+		</form>
+		<form method="post" action="visibility" >
+		<td><button type="submit" style="width: 100%">Change Visibility</button></td>
+		<input type="hidden" name="id" value="$titles[blog]">
+		</form>
+	</tr>
+</table> 
+<br>
+
+</html>
